@@ -1,0 +1,43 @@
+      * {
+          margin: 0px;
+          padding: 0px;
+      }
+
+      .logo {
+          float: left;
+          width: 100px;
+          line-height: 50px;
+          color: #DDD;
+          font-size: 24px;
+          cursor: pointer;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      .headers {
+          height: 50px;
+          background-color: rgba(47, 47, 47, 0.98);
+      }
+
+      .headers-box {
+          width: 600px;
+          margin: 0px auto;
+          line-height: 50px;
+      }
+
+      .inputs {
+          float: right;
+          width: 60%;
+          height: 24px;
+          margin-top: 12px;
+          text-indent: 10px;
+          border-radius: 5px;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.24), 0 1px 6px rgba(0, 0, 0, 0.45) inset;
+          border: none;
+      }
+      .btn{
+        float: right;
+        height: 24px;
+        margin-top: 12px;
+        margin-left: 10px;
+        width: 50px;
+      }
