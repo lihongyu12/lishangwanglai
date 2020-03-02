@@ -7,18 +7,17 @@ import Option from './option'
 import {
 	connect
 } from 'react-redux'
-class Inputer extends React.Component {
+class Inputer2 extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			info: '收礼',
+			info: '待参加',
 			arr: [],
 			show: false,
 			Option: ''
 		}
 		this.onSetx = this.onSetx.bind(this)
 		this.add = this.add.bind(this)
-		this.getInfo = this.getInfo.bind(this)
 		this.setShow = this.setShow.bind(this)
 		this.getOption = this.getOption.bind(this)
 		this.myInput1 = React.createRef()
@@ -49,11 +48,6 @@ class Inputer extends React.Component {
 		this.myInput4.current.value = ''
 
 	}
-	getInfo(comment) {
-		this.setState({
-			info: comment
-		});
-	}
 	getOption(comment) {
 		this.setState({
 			Option: comment
@@ -67,7 +61,7 @@ class Inputer extends React.Component {
 	render() {
 		return (
 			<div>
-			<Types txt1="收礼" txt2="送礼" getInfo={this.getInfo}/>
+			<div>记礼事</div>
 			<div className="inputs">
 				<div>
 					<span>金额：</span><span>￥{}</span>
@@ -113,4 +107,4 @@ var mapStateToProps = function(state) {
 		todos: state
 	}
 }
-export default connect(mapStateToProps)(Inputer);
+export default connect(mapStateToProps)(Inputer2);

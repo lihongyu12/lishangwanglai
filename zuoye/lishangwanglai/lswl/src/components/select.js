@@ -21,6 +21,7 @@ class Select extends React.Component {
         }, function() {
             this.switchDropdown()
         })
+        this.props.getOption(val)
     }
     render() {
         return (

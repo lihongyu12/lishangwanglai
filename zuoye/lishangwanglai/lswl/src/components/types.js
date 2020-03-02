@@ -11,7 +11,8 @@ class Types extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			info: 'shou'
+			info: 'shou',
+			info2: ''
 		}
 		this.setinfo = this.setinfo.bind(this)
 		this.setinfo2 = this.setinfo2.bind(this)
@@ -20,19 +21,13 @@ class Types extends React.Component {
 		this.setState({
 			info: 'shou'
 		})
-		this.props.dispatch({
-			type: 'set',
-			info: this.state.info
-		})
+		this.props.getInfo(this.props.txt1)
 	}
 	setinfo2() {
 		this.setState({
 			info: 'song'
 		})
-		this.props.dispatch({
-			type: 'set',
-			info: this.state.info
-		})
+		this.props.getInfo(this.props.txt2)
 	}
 	render() {
 		return (
@@ -42,7 +37,9 @@ class Types extends React.Component {
 							<span onClick={this.setinfo} style={{color:this.state.info=='song'&&'#00ace6',background:this.state.info=='shou'&&'#00ace6'}}>{this.props.txt1}</span>
 							<span onClick={this.setinfo2} style={{color:this.state.info=='shou'&&'#00ace6',background:this.state.info=='song'&&'#00ace6'}}>{this.props.txt2}</span>
 						</div>
-						<NavLink to="/jia" style={{marginRight:'0.5rem'}}>{'+'}</NavLink>
+		{
+			this.props.isShow && <NavLink to={this.props.link||'/'} style={{marginRight:'0.5rem'}}>{'+'}</NavLink>
+		}
 					</div>
 		)
 	}

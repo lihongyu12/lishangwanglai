@@ -12,6 +12,7 @@ import Router1 from './router-components/router1'
 import Router2 from './router-components/router2'
 import Router3 from './router-components/router3'
 import Inputer from './components/input'
+import Inputer2 from './components/input2'
 import {
 	connect
 } from 'react-redux'
@@ -36,6 +37,8 @@ class App extends React.Component {
 		  <Route exact strict path="/router3" component={Router3}>
 		  </Route>
 		  <Route exact strict path="/jia" component={Inputer}>
+		  </Route>
+		  <Route exact strict path="/jia2" component={Inputer2}>
 		  </Route>
 		  <Route>
 			  404页面！

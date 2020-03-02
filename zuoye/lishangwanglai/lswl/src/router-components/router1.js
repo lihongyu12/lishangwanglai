@@ -11,13 +11,29 @@ import {
 class Router1 extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			info: '收礼',
+			Option: '全部'
+		}
+		this.getOption = this.getOption.bind(this)
+		this.getInfo = this.getInfo.bind(this)
+	}
+	getInfo(comment) {
+		this.setState({
+			info: comment
+		});
+	}
+	getOption(comment) {
+		this.setState({
+			Option: comment
+		});
 	}
 	render() {
 		return (
 			<div>
 			<div>
-				<Types txt1="收礼" txt2="送礼"/>
-				<Select defaultValue="全部" Width="33.333%">
+				<Types txt1="收礼" txt2="送礼" getInfo={this.getInfo} isShow={true} link={'/jia'}/>
+				<Select defaultValue="全部" Width="33.333%" getOption={this.getOption}>
 					<Option value="全部">全部</Option>
 					<Option value="结婚收礼">结婚收礼</Option>
 					<Option value="搬家收礼">搬家收礼</Option>
@@ -34,14 +50,19 @@ class Router1 extends React.Component {
 					<Option value="111">{111}</Option>
 				</Select>
 				<div>
-					{
+		{
 			this.props.todos.arr1s.map((item, index) => {
-						if (item.type == this.props.todos.infos) {
+				if (item.type == this.state.info) {
+					if (this.state.Option && item.type2 == this.state.Option) {
+						return <Li key={index} x1="类目名称" x2="姓名" x3="时间" typename={item.typename} size="1.5rem" name={item.name} money={item.money} time={item.time}/>
+					} else if (this.state.Option == '全部') {
+						if (item.type == this.state.info) {
 							return <Li key={index} x1="类目名称" x2="姓名" x3="时间" typename={item.typename} size="1.5rem" name={item.name} money={item.money} time={item.time}/>
-								}
-							})
+						}
 					}
-					
+				}
+			})
+		}
 				</div>
 			</div>
 			</div>
