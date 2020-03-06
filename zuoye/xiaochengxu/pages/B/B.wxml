@@ -1,0 +1,9 @@
+<!--pages/B/B.wxml-->
+<view>
+  <view class="indexs"><text class="index">01</text> <text> / {{arr1.length}}</text></view>
+  <view wx:for="{{arr1}}" class="title"> <text>{{item}}</text> </view>
+  <view>
+    <view wx:for="{{arr2}}" class="option"> <text>{{item}}</text> </view>
+  </view>
+  <view class="liuy"> <text>留言</text> </view>
+</view>

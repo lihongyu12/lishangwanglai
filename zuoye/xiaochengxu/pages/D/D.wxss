@@ -1,0 +1,21 @@
+/* pages/D/D.wxss */
+.D{
+  height: 504px;
+  background-color:rgba(233, 233, 233, 0.2);
+  font-size: 16px;
+  color: #000;
+  overflow-y:scroll; 
+}
+.title{
+  color: #ddd;
+  line-height: 2em;
+  padding-top:10px; 
+  text-indent: 1em;
+  font-size: 14px;
+}
+.language,.city{
+  background-color: #fff;
+  margin-bottom: 2px;
+  line-height: 2em;
+  text-indent: 1em;
+}

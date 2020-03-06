@@ -1,0 +1,19 @@
+<!--pages/D/D.wxml-->
+<view class="D">
+  <view>
+    <view class="title">
+      <text>语言</text>
+    </view>
+    <view wx:for="{{arr}}" class="language">
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <view>
+    <view class="title">
+      <text>城市</text>
+    </view>
+    <view wx:for="{{arr2}}" class="city">
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

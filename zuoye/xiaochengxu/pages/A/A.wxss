@@ -1,0 +1,116 @@
+/* pages/A/A.wxss */
+.clearfloat::after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.A{
+  height: 493px;
+  position: relative;
+  width: 100%;
+}
+.header{
+font-size: 16px;
+margin: 10px 0px;
+}
+.header>text{
+  float: left;
+  padding:10px;
+  text-align: center; 
+}
+.search{
+  float: right;
+  width: 80%;
+  position: relative;
+  height: 40.8px;
+  margin-right: 5px;
+}
+.search icon{
+  position: absolute;
+  left: 0px;
+  top:0px;
+  margin: 10px;
+}
+.search input{
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-indent: 2em;
+  background-color: rgba(233, 233, 233, 0.329);
+  padding: 10px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.aside-left{
+  float: left;
+  width: 24%;
+  background-color: rgba(233, 233, 233, 0.329);
+  text-align: center;
+  height: 442px;
+  position: relative;
+}
+.lists{
+  box-sizing: border-box;
+  padding: 10px 0px;
+}
+.lists2{
+  position: absolute;
+  width: 76.8px;
+  height: 40.8px;
+  left: -73px;
+}
+.aside-right{
+  float: right;
+  width: 74%;
+  height: 442px;
+  overflow-y: scroll;
+}
+.content{
+  margin: 8px;
+  margin-bottom: 0px;
+  background-color: #ffffcc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding:10px; 
+  font-size: 14px;
+  line-height: 2em;
+}
+.content2>view{
+  padding: 10px;
+  font-size: 15px;
+}
+.content2>view:nth-of-type(even){
+  background-color: rgba(233, 233, 233, 0.329);
+}
+.imgbox{
+  text-align: center;
+}
+.imgbox image{
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 5px;
+  margin-top:8px;
+}
+.weight{
+  color: #000;
+  font-weight: 700;
+}
+.fnex,.liuy{
+position: absolute;
+font-size: 12px;
+padding:4px 15px;
+text-align: center;
+right: 10px; 
+border-radius: 10px;
+background-color: #fff;
+box-shadow: 0px 1px 5px #ddd;
+}
+.fnex{
+  bottom: 40px;
+}
+.liuy{
+  bottom: 80px;
+}
