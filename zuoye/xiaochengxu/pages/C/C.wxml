@@ -1,7 +1,7 @@
 <!--pages/C/C.wxml-->
 <view class="C">
-  <view wx:for="{{arr}}" class="list">
-    <image></image><text>{{item}}</text><text class="r">></text>
+  <view wx:for="{{arr}}" wx:key="item" class="list">
+    <image src="{{item.img}}"></image><text>{{item.title}}</text><text class="r">></text>
   </view>
   <view class="fnex"> <text>分享</text> </view>
   <view class="liuy"> <text>留言</text> </view>

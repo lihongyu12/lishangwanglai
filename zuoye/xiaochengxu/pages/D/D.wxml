@@ -4,16 +4,18 @@
     <view class="title">
       <text>语言</text>
     </view>
-    <view wx:for="{{arr}}" class="language">
+    <view wx:for="{{arr}}" wx:key="item" class="language" data-i="{{index}}" bindtap="setIndex">
       <text>{{item}}</text>
+      <text class="dui" hidden="{{index!=indexs2}}">✔</text>
     </view>
   </view>
   <view>
     <view class="title">
       <text>城市</text>
     </view>
-    <view wx:for="{{arr2}}" class="city">
+    <view wx:for="{{arr2}}" wx:key="item" class="city" data-info="{{item}}" data-i="{{index}}" bindtap="setInfo">
       <text>{{item}}</text>
+      <text class="dui" hidden="{{index!=indexs}}">✔</text>
     </view>
   </view>
 </view>

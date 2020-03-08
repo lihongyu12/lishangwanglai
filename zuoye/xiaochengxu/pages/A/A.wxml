@@ -1,43 +1,42 @@
 <!--pages/A/A.wxml-->
 <view class="A clearfloat">
   <view class="header clearfloat">
-    <text>河南</text>
+    <text>{{city||'北京'}}</text>
     <view class="search">
       <icon type="search" size="{{25}}" color="#000" />
       <input type="text" placeholder="搜索垃圾查看对应分类"></input>
     </view>
   </view>
+  <view class="box2"></view>
+  <view class="box">
+    <view class="box_an">全国版垃圾分类测试上线了，朋友圈晒朋友圈，大家一起比拼！为大力推进垃圾分类，如有平台需接入垃圾分类查询服务，请留言。</view>
+  </view>
   <view class="aside-left">
-    <view wx:for="{{arr}}" class="lists">
-      <text>{{item}}</text>
-    </view>
-     <view wx:for="{{colors}}" class="lists2" style="background:{{item}};top:{{40.8*index+'px'}}">
-      
+     <view wx:for="{{colors}}" class="lists2" wx:key="index" style="background:{{item}};top:{{81.6*index+'rpx'}};left:{{index==indexs?'0rpx':'-98%'}};">
       </view>
+       <view wx:for="{{arr}}" class="lists" wx:key="index" bindtap="setIndex" data-id="{{index}}">
+      <text style="color:{{index==indexs?'#fff':'#c2c2a3'}}">{{item.name}}</text>
+    </view>
   </view>
   <view class="aside-right">
     <view class="content">
       <view class="imgbox">
-        <image></image>
+        <image src="{{imgs[indexs]}}"></image>
       </view>
       <view>
-          <text><text class="weight">湿垃圾</text>是指易腐的生物质废弃物。包括剩菜剩饭、瓜皮果核、花卉绿植、肉类碎骨、过期食品、餐厨垃圾等。
-          </text> 
+          <text class="weight">{{arr[indexs].name}}</text><text>{{arr[indexs].explain}}</text> 
       </view>
       <view>
         <view>
           <text class="weight">投放要求:</text>
         </view>
         <view>
-          <text>●纯流质的食物垃圾，如牛奶等，应直接倒进下水口</text>
-        </view>
-        <view>
-          <text>●有包装物的湿垃圾应将包装物取出后分类投放，包装物请投放到对应的可回收物容器或干垃圾容器</text>
+          <text>{{arr[indexs].require}}</text>
         </view>
       </view>
     </view>
     <view class="content2">
-      <view wx:for="{{arr2}}">
+      <view wx:for="{{arr[indexs].common}}" wx:key="index">
         <text>{{item}}</text>
       </view>
     </view>
