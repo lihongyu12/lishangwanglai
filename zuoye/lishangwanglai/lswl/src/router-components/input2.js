@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
-import Types from './types'
+import Types from '../components/types'
 import store from '../store'
-import Select from './select'
-import Option from './option'
+import Select from '../components/select'
+import Option from '../components/option'
 import {
 	connect
 } from 'react-redux'
@@ -16,7 +16,7 @@ class Inputer2 extends React.Component {
 			show: false,
 			Option: ''
 		}
-		this.onSetx = this.onSetx.bind(this)
+
 		this.add = this.add.bind(this)
 		this.setShow = this.setShow.bind(this)
 		this.getOption = this.getOption.bind(this)
@@ -26,22 +26,16 @@ class Inputer2 extends React.Component {
 		this.myInput3 = React.createRef()
 		this.myInput4 = React.createRef()
 	}
-	onSetx() {
-		if (this.props.shou - this.props.song > 0) {
-			return true
-		} else {
-			return false
-		}
-	}
+
 	add() {
 
 		this.props.dispatch({
 			type: this.state.info,
 			type2: this.state.Option,
-			money: this.myInput1.current.value,
+			where: this.myInput1.current.value,
 			text: this.myInput2.current.value,
 			time: this.myInput3.current.value,
-			name: this.myInput4.current.value
+			typename: this.myInput4.current.value
 		})
 		this.myInput1.current.value = ''
 		this.myInput2.current.value = ''
@@ -97,8 +91,8 @@ class Inputer2 extends React.Component {
 								<span><label><input type="radio" name="radios"/>同学</label></span>
 								<span><label><input type="radio" name="radios"/>同事</label></span>
 					</div>
-					<div><span>{'送礼人:'}</span><input type="text" className="inputs" ref={this.myInput4}/></div>
-					<div><input type="text" ref={this.myInput1}/></div>
+					<div><input placeholder="输入要送礼的对象" type="text" className="inputs" ref={this.myInput4}/></div>
+					<div><input placeholder="输入地点" type="text" className="inputs" ref={this.myInput1}/></div>
 				</div>}
 				<div className="tijiao">
 					<button onClick={()=>{this.add()}}>提交</button>

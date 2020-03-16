@@ -53,7 +53,7 @@ class Router2 extends React.Component {
 			this.props.todos.arr2s.map((item, index) => {
 						 if (item.type == this.state.info) {
 						 	if (this.state.Option && item.type2 == this.state.Option) {
-								return <Li key={index} x1="事件名" x2="地点" x3="时间" typename={item.typename} size="0.5rem" name={item.where} money={item.type} time={item.time}/>
+						return <Li key={index} x1="事件名" x2="地点" x3="时间" typename={item.typename} size="0.5rem" name={item.where} money={item.type} time={item.time}/>
 							}else if(this.state.Option=='全部'){
 								if (item.type == this.state.info){
 									return <Li key={index} x1="事件名" x2="地点" x3="时间" typename={item.typename} size="0.5rem" name={item.where} money={item.type} time={item.time}/>

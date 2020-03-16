@@ -2,29 +2,26 @@ import React from 'react';
 import '../App.css';
 import Comp1 from '../components/componertn1'
 import Table from '../components/table'
+import {
+	NavLink
+} from 'react-router-dom'
+import store from '../store'
 var fn = null;
 var months = new Date().getMonth() + 1;
 
-var arr1 = [{
-	user: 'ijiefe',
-	y: '1000',
-	k: '789'
-}, {
-	user: 'ijiefe',
-	y: '1000',
-	k: '789'
-}, {
-	user: 'ijiefe',
-	y: '1000',
-	k: '789'
-}, {
-	user: 'ijiefe',
-	y: '1000',
-	k: '789'
-}]
+
 class Index extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			arr: []
+		}
+	}
+	componentDidMount() {
+		console.log(store)
+		this.setState({
+			arr: store.getState().rankarr
+		})
 	}
 	render() {
 		return (
@@ -48,10 +45,13 @@ class Index extends React.Component {
 						<span style={{fontWeight:'700',flex:'0.3'}}>用户</span>
 						<span style={{fontWeight:'700',flex:'0.25'}}>历史盈亏</span>
 						<span style={{fontWeight:'700',flex:'0.25'}}>本月盈亏</span>
-						<span style={{fontWeight:'700',flex:'0.1'}}>更多</span>
+						<span style={{fontWeight:'700',flex:'0.1'}}><NavLink to="/index_more">更多</NavLink></span>
 					</div> {
-				arr1.map((item, index) => {
-					return <Table key={index} txt1={index+1} txt2={item.user} txt3={item.y} txt4={item.k}/>
+				this.state.arr.map((item, index) => {
+					if (index<=6) {
+						return <Table key={index} txt1={index+1} txt2={item.user} txt3={item.y} txt4={item.k}/>
+					}
+					
 				})
 			} </div> <
 			/div>
